@@ -21,13 +21,25 @@ void main()
 
 	//Виділення пам'яті
 	//Який розмір має petro при створенні
+
+
 	Student petro("Іван"); //Це об'єкти - petro, створений на основі класа Student.
 	petro.setAge(25);
 	petro.ShowInfo();
 
+	if (1)
+	{
+		Student ivanka("Іванка");
+		ivanka = petro; //оператор присвоєння
+		ivanka.ShowInfo();
+	}
+
 	//Виклик конструтора копіювання
 	Student newPetro(petro);
 	newPetro.ShowInfo();
+	
+
+	
 
 	/*cout << "Розмір об'єкта при створенні:" << sizeof(petro) << "\n";
 	cout<<"Розмір поля m_age:" << sizeof(petro.getAge())<<"\n";
