@@ -1,24 +1,22 @@
 #pragma once
 #include<iostream>
 using namespace std;
+#include "Person.h";
 
-class Student {  //Клас - Це мереханіз для створення об'єктів. На основі класами ми створуємо його 
+class Student : public Person
+{  //Клас - Це мереханіз для створення об'єктів. На основі класами ми створуємо його 
 				 //	екземпляри - об'єкти
-	char* name; //По замовчуванню специфікатор доступу private - закритий
-	int name_buffer;
-	int m_age;	//По замовчуванню специфікатор доступу private - закритий
+private:
+	double mark;
 
 public: 
 	Student();   //по замовчуванню
-	Student(const char *name); //з параметрами
-	Student(const Student &student); //копіювання
-	~Student();
+	Student(const char *name, double mark); //з параметрами
+	//Student(const Student &student); //копіювання
+	//~Student();
 
 	Student& operator=(const Student &);
-	void setAge(int age);
-	void setName(const char *name);
-	int getAge();
-	string getName();
+	
 	void ShowInfo();
 };
 
