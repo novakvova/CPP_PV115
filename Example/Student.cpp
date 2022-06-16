@@ -9,7 +9,6 @@ Student::Student()
 
 Student::Student(const char* name, double mark) : Person(name)
 {
-	//Person::Person(name);
 	this->mark = mark;
 }
 
@@ -18,9 +17,8 @@ Student & Student::operator=(const Student& student)
 	// Guard self assignment
 	if (this == &student)
 		return *this;
-	Person p = (Person)student;
-	this->setAge(p.getAge());
-	setName(p.getName());
+	this->setAge(Person::getAge());
+	setName(Person::getName());
 	mark = student.mark;
 	return *this;
 }
@@ -28,7 +26,6 @@ Student & Student::operator=(const Student& student)
 
 
 void Student::ShowInfo() {
-	cout << this->getName() << "\t" 
-		<< this->getAge() << "\t"
-		<< "mark: " << mark << "\n";
+	Person::ShowInfo();
+	cout<<"Îö³íêà: " << mark << "\n";
 }

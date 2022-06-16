@@ -8,10 +8,13 @@ private:
 	int name_buffer;
 	int m_age;	//По замовчуванню специфікатор доступу private - закритий
 
-public:
+protected:
 	Person();   //по замовчуванню
 	Person(const char* name); //з параметрами
 	Person(const Person& student); //копіювання
+
+public:
+
 	~Person();
 
 	void setAge(int age);
@@ -19,5 +22,7 @@ public:
 	void setName(const string name);
 	int getAge();
 	string getName();
+
+	virtual void ShowInfo();
 };
 

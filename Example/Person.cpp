@@ -27,7 +27,7 @@ Person::Person(const Person& student)
 }
 
 Person::~Person() {
-	cout << "Student delete: " << name << "\n";
+	cout << "\nPerson delete: " << name << "\n";
 	delete[] name;
 }
 
@@ -57,3 +57,7 @@ void Person::setName(const string name)
 }
 int Person::getAge() { return m_age; }
 string Person::getName() { return name; }
+
+void Person::ShowInfo() {
+	cout << "Name: "<<name<< "\t"<<"Age: "<<m_age<<"\n";
+}
