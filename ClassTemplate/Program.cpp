@@ -20,7 +20,8 @@ public:
 	}
 	T operator-(const Point &p)
 	{
-		return 0;
+		T vidstan = sqrt(pow(p.x-x, 2.0) + pow(p.y - y, 2));
+		return vidstan;
 	}
 };
 int main()
@@ -29,5 +30,6 @@ int main()
 	p.Show();
 	Point<double> c(-2.3, 4);
 	double t = p - c;
+	cout << t << "\n";
 	return 0;
 }
