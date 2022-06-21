@@ -18,10 +18,16 @@ public:
 	{
 		cout << "x=" << x << "\ty=" << y << "\n";
 	}
+	T operator-(const Point &p)
+	{
+		return 0;
+	}
 };
 int main()
 {
 	Point<double> p(2.8, 4);
 	p.Show();
+	Point<double> c(-2.3, 4);
+	double t = p - c;
 	return 0;
 }
