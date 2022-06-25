@@ -2,6 +2,7 @@
 using namespace std;
 #include<Windows.h>
 #include "MyList.h"
+#include "Student.h"
 
 
 int main()
@@ -9,17 +10,40 @@ int main()
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
 
-	MyList<int> list;
+	MyList<Student> students;
+	Student vova("Новак Володимир", "096 765 89 76", 36);
+	students.Add(vova);
+	Student ilona("Ілона Треба", "098 765 89 76", 30);
+	students.Add(ilona);
+	Student uhym("Юхим Нехочу", "095 765 89 76", 65);
+	students.Add(uhym);
+	cout << "---------Students---------\n";
+	cout << students << "\n";
+	//students.sort();
+	//cout << "---------Students sort---------\n";
+	//cout << students << "\n";
+
+	
+	/*MyList<int> list;
 	list.Add(12);
+	list.Add(-2);
 	list.Add(13);
 	list.Add(19);
 
-	cout << "List: \n";
+	cout << "List: "<<list.size()<<"\n";
 	cout << list;
 
-	list.Remove(12);
+	list.sort();
+	cout << "List sort: \n";
+	cout << list;*/
+
+
+
+
+
+	/*list.Remove(12);
 	cout << "Remove element 12: \n";
-	cout << list;
+	cout << list;*/
 
 	return 0;
 }

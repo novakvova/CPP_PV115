@@ -76,5 +76,38 @@ public:
 			delete temp; //видал€Їмо знайдений елемент
 		}
 	}
+
+	int size() {
+		int count = 0;
+		MyNode* temp = head; //Temp - вказуЇ на перший елемент
+		while (temp != NULL) //якщо temp уже у к≥нц≥
+		{
+			temp = temp->Next; //перем≥щаЇмо на наступний елемент
+			count++;
+		}
+		return count;
+	}
+
+	void sort() {
+		int size = this->size();
+		MyNode* temp = head;
+		for (int i = 0; i < size-1; i++)
+		{
+			MyNode* next = temp->Next;   
+			for (int j = i+1; j < size; j++)  //1 пор≥внюЇ ≥з ≥ншими елементами, 
+				//€кщо в≥н мешний в≥н менший переставл€Їмо
+			{
+				if (temp->data > next->data)
+				{
+					T tempData = temp->data;
+					temp->data = next->data;
+					next->data = tempData;
+				}
+				next = next->Next;
+			}
+			temp = temp->Next;
+			
+		}
+	}
 };
 
