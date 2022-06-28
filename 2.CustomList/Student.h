@@ -20,6 +20,19 @@ public:
 		this->phone = phone;
 		this->age = age;
 	}
+	Student(const Student& student)
+	{
+		this->name = student.name;
+		this->age = student.age;
+		this->phone = student.phone;
+	}
+
+	bool operator>(const Student& student)
+	{
+		if (this->name > student.name)
+			return true;
+		return false;
+	}
 
 	friend ostream& operator<<(ostream& out, const Student& student)
 	{

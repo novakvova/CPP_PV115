@@ -13,12 +13,21 @@ int main()
 	MyList<Student> students;
 	Student vova("Новак Володимир", "096 765 89 76", 36);
 	students.Add(vova);
+	Student ilon("Ілон Маск", "096 987 89 76", 36);
+	students.Add(ilon);
 	Student ilona("Ілона Треба", "098 765 89 76", 30);
 	students.Add(ilona);
 	Student uhym("Юхим Нехочу", "095 765 89 76", 65);
 	students.Add(uhym);
+
+	//cout << (vova>uhym) << "\n";
+
 	cout << "---------Students---------\n";
 	cout << students << "\n";
+	cout << "-----Sort students-------\n";
+	students.sort(true);
+	cout << students << "\n";
+	
 	//students.sort();
 	//cout << "---------Students sort---------\n";
 	//cout << students << "\n";
@@ -33,7 +42,7 @@ int main()
 	cout << "List: "<<list.size()<<"\n";
 	cout << list;
 
-	list.sort();
+	list.sort(true);
 	cout << "List sort: \n";
 	cout << list;*/
 

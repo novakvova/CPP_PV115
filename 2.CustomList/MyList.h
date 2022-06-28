@@ -88,7 +88,7 @@ public:
 		return count;
 	}
 
-	void sort() {
+	void sort(bool revers=false) {
 		int size = this->size();
 		MyNode* temp = head;
 		for (int i = 0; i < size-1; i++)
@@ -97,7 +97,16 @@ public:
 			for (int j = i+1; j < size; j++)  //1 порівнює із іншими елементами, 
 				//якщо він мешний він менший переставляємо
 			{
-				if (temp->data > next->data)
+				if (revers)
+				{
+					if (!(temp->data>next->data))
+					{
+						T tempData = temp->data;
+						temp->data = next->data;
+						next->data = tempData;
+					}
+				}
+				else if (temp->data > next->data)
 				{
 					T tempData = temp->data;
 					temp->data = next->data;
@@ -106,7 +115,6 @@ public:
 				next = next->Next;
 			}
 			temp = temp->Next;
-			
 		}
 	}
 };
