@@ -34,6 +34,19 @@ public:
 		return false;
 	}
 
+	bool operator==(const Student& student)
+	{
+		if (this->name == student.name)
+			return true;
+		return false;
+	}
+	bool operator!=(const Student& student)
+	{
+		if (this->name != student.name)
+			return true;
+		return false;
+	}
+
 	friend ostream& operator<<(ostream& out, const Student& student)
 	{
 

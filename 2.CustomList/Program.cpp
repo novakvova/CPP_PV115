@@ -24,10 +24,15 @@ int main()
 
 	cout << "---------Students---------\n";
 	cout << students << "\n";
-	cout << "-----Sort students-------\n";
-	students.sort(true);
+	cout << "----Remove Ілон Маск--------\n";
+	students.Remove(ilon);
 	cout << students << "\n";
+
+	/*cout << "-----Sort students-------\n";
+	students.sort(true);
+	cout << students << "\n";*/
 	
+
 	//students.sort();
 	//cout << "---------Students sort---------\n";
 	//cout << students << "\n";
