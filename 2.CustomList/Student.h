@@ -1,11 +1,14 @@
 #pragma once
+
 #include<iostream>
+#include <cstdio>
 using namespace std;
 class Student
 {
 private:
 	string name;
 	string phone;
+	string image;
 	int age;
 
 public:
@@ -19,6 +22,15 @@ public:
 		this->name = name;
 		this->phone = phone;
 		this->age = age;
+	}
+	Student(const char* name, const char* phone, const char * image, int age)
+	{
+		this->name = name;
+		this->phone = phone;
+		this->age = age;
+		
+		//copy image to directory images
+
 	}
 	Student(const Student& student)
 	{

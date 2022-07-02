@@ -1,14 +1,16 @@
 #include<iostream>
 using namespace std;
+#include <direct.h>
 #include<Windows.h>
 #include "MyList.h"
 #include "Student.h"
-
 
 int main()
 {
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
+	_mkdir("images");
+	//cout<<"Current directory "<< current_path(temp_directory_path())<<"\n";
 
 	MyList<Student> students;
 	Student vova("Новак Володимир", "096 765 89 76", 36);
@@ -27,6 +29,7 @@ int main()
 	cout << "----Remove Ілон Маск--------\n";
 	students.Remove(ilon);
 	cout << students << "\n";
+	cin.get();
 
 	/*cout << "-----Sort students-------\n";
 	students.sort(true);
