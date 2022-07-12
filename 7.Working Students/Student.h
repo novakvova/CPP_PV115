@@ -9,7 +9,6 @@ class Student
 private:
 	string name;
 	string phone;
-	string image;
 	int age;
 
 public:
@@ -24,15 +23,7 @@ public:
 		this->phone = phone;
 		this->age = age;
 	}
-	Student(const char* name, const char* phone, const char* image, int age)
-	{
-		this->name = name;
-		this->phone = phone;
-		this->age = age;
-
-		//copy image to directory images
-
-	}
+	
 	Student(const Student& student)
 	{
 		this->name = student.name;
@@ -60,12 +51,38 @@ public:
 		return false;
 	}
 
+	Student & operator=(const Student& student)
+	{
+		if (this == &student)
+			return *this;
+		this->name = student.name;
+		//this->image = student.image;
+		this->phone = student.phone;
+		this->age = student.age;
+		return *this;
+	}
+
 	friend ostream& operator<<(ostream& out, const Student& student)
 	{
 
 		out << student.name << "\t" << student.phone << "\t" << student.age;
 
 		return out;
+	}
+
+	friend istream& operator>>(istream& in, Student& student)
+	{
+		in.seekg(0);
+		char tmp[100];
+		cout << "Enter student Name\n";
+		in.getline(tmp, 100, '\n');
+		student.name = tmp;
+		cout << "Enter student Phone\n"; 
+		in.getline(tmp, 100, '\n');
+		student.phone = tmp;
+		cout << "Enter student Age\n"; 
+		in >> student.age;
+		return in;
 	}
 
 	friend ofstream& operator<<(ofstream& out, const Student& student)

@@ -40,6 +40,8 @@ public:
 		}
 	}
 
+
+
 	void SaveToFile(const char* filePath)
 	{
 		ofstream out(filePath);
@@ -73,6 +75,28 @@ public:
 		while (temp != NULL) //якщо temp уже у к≥нц≥
 		{
 			cout << temp->data << "\n";
+			temp = temp->next; //перем≥щаЇмо на наступний елемент
+		}
+	}
+
+	bool ItemIsList(T data)
+	{
+		Node* temp = head; //Temp - вказуЇ на перший елемент
+		while (temp != NULL) //якщо temp уже у к≥нц≥
+		{
+			if (data == temp->data)
+				return true;
+			temp = temp->next; //перем≥щаЇмо на наступний елемент
+		}
+		return false;
+	}
+	void Change(T oldData, T newData)
+	{
+		Node* temp = head; //Temp - вказуЇ на перший елемент
+		while (temp != NULL) //якщо temp уже у к≥нц≥
+		{
+			if (oldData == temp->data)
+				temp->data = newData;
 			temp = temp->next; //перем≥щаЇмо на наступний елемент
 		}
 	}
