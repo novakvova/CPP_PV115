@@ -13,8 +13,8 @@ private:
 
 public:
 	Student() {
-		this->name = "no name";
-		this->phone = "+38";
+		this->name = "";
+		this->phone = "";
 		this->age = 18;
 	}
 	Student(const char* name, const char* phone, int age)
@@ -55,9 +55,11 @@ public:
 	{
 		if (this == &student)
 			return *this;
-		this->name = student.name;
+		if(!student.name.empty())
+			this->name = student.name;
 		//this->image = student.image;
-		this->phone = student.phone;
+		if(!student.phone.empty())
+			this->phone = student.phone;
 		this->age = student.age;
 		return *this;
 	}
@@ -76,10 +78,14 @@ public:
 		char tmp[100];
 		cout << "Enter student Name\n";
 		in.getline(tmp, 100, '\n');
-		student.name = tmp;
+		string str = tmp;
+		if(!str.empty())
+			student.name = tmp;
 		cout << "Enter student Phone\n"; 
 		in.getline(tmp, 100, '\n');
-		student.phone = tmp;
+		str = tmp;
+		if (!str.empty())
+			student.phone = tmp;
 		cout << "Enter student Age\n"; 
 		in >> student.age;
 		return in;
