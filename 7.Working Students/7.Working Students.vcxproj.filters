@@ -27,4 +27,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\hp\Desktop\Images\remove-bg.webp" />
+  </ItemGroup>
 </Project>

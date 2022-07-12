@@ -1,13 +1,16 @@
 #include<iostream>
 #include "Doubly.h"
 #include "Student.h"
-using namespace std;
 #include<Windows.h>
+using namespace std;
 
 int main()
 {
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
+
+
+
 	Doubly<Student> list;
 	int action = 0;
 	do
