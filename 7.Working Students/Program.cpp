@@ -1,46 +1,55 @@
-#include<iostream>
+п»ї#include<iostream>
 #include "Doubly.h"
 #include "Student.h"
+#include <opencv2/core.hpp>
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/highgui.hpp>
 #include<Windows.h>
 using namespace std;
+using namespace cv;
 
 int main()
 {
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
 
-
+	cv::Mat img = cv::imread("C:\\Users\\hp\\Desktop\\Images\\images.jpg");
+	namedWindow("First OpenCV Application", WINDOW_AUTOSIZE);
+	cv::imshow("First OpenCV Application", img);
+	cv::moveWindow("First OpenCV Application", 0, 45);
+	cv::waitKey(0);
+	cv::destroyAllWindows();
 
 	Doubly<Student> list;
 	int action = 0;
 	do
 	{
-		cout << "0.Вихід\n";
-		cout << "1.Додати студента\n";
-		cout << "2.Змінити студента\n";
-		cout << "3.Видалити студента\n";
-		cout << "4.Переглянути список студентів\n";
-		cout << "5.Загрузити студентів із файла\n";
-		cout << "6.Зберегти студентів у файл\n";
+		cout << "0.Р’РёС…С–Рґ\n";
+		cout << "1.Р”РѕРґР°С‚Рё СЃС‚СѓРґРµРЅС‚Р°\n";
+		cout << "2.Р—РјС–РЅРёС‚Рё СЃС‚СѓРґРµРЅС‚Р°\n";
+		cout << "3.Р’РёРґР°Р»РёС‚Рё СЃС‚СѓРґРµРЅС‚Р°\n";
+		cout << "4.РџРµСЂРµРіР»СЏРЅСѓС‚Рё СЃРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚С–РІ\n";
+		cout << "5.Р—Р°РіСЂСѓР·РёС‚Рё СЃС‚СѓРґРµРЅС‚С–РІ С–Р· С„Р°Р№Р»Р°\n";
+		cout << "6.Р—Р±РµСЂРµРіС‚Рё СЃС‚СѓРґРµРЅС‚С–РІ Сѓ С„Р°Р№Р»\n";
 		cout << "->_";
 		cin >> action;
 		switch (action)
 		{
 		case 1: {
 			Student temp;
-			cout << "Вкажіть дані:";
+			cout << "Р’РєР°Р¶С–С‚СЊ РґР°РЅС–:";
 			cin >> temp;
 			list.Add(temp);
 			break;
 		}
 		case 2: {
 			Student studentChange;
-			cout << "Вкажіть назву елемента, який треба мінять:\n";
+			cout << "Р’РєР°Р¶С–С‚СЊ РЅР°Р·РІСѓ РµР»РµРјРµРЅС‚Р°, СЏРєРёР№ С‚СЂРµР±Р° РјС–РЅСЏС‚СЊ:\n";
 			cin >> studentChange;
 			bool isList = list.ItemIsList(studentChange);
 			if (isList)
 			{
-				cout << "Студента знайдено. Вкажіть нове значення:";
+				cout << "РЎС‚СѓРґРµРЅС‚Р° Р·РЅР°Р№РґРµРЅРѕ. Р’РєР°Р¶С–С‚СЊ РЅРѕРІРµ Р·РЅР°С‡РµРЅРЅСЏ:";
 				Student newStudent;
 				cin >> newStudent;
 				list.Change(studentChange, newStudent);
@@ -49,7 +58,7 @@ int main()
 			break;
 		}
 		case 4: {
-			cout << "Список усіх елементів:\n";
+			cout << "РЎРїРёСЃРѕРє СѓСЃС–С… РµР»РµРјРµРЅС‚С–РІ:\n";
 			list.ShowList();
 		}
 		}
@@ -68,9 +77,9 @@ int main()
 	//list.ShowList();
 
 	//Doubly<Student> list;
-	//Student st("Іван Петрович","098 22 33 123", 12);
+	//Student st("Р†РІР°РЅ РџРµС‚СЂРѕРІРёС‡","098 22 33 123", 12);
 	//list.Add(st);
-	//Student st2("Оксана Павлівна", "097 11 22 123", 18);
+	//Student st2("РћРєСЃР°РЅР° РџР°РІР»С–РІРЅР°", "097 11 22 123", 18);
 	//list.Add(st2);
 	//list.SaveToFile("stud4.txt");
 	
