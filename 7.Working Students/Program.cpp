@@ -13,12 +13,12 @@ int main()
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
 
-	cv::Mat img = cv::imread("C:\\Users\\hp\\Desktop\\Images\\images.jpg");
+	/*cv::Mat img = cv::imread("remove-bg.webp");
 	namedWindow("First OpenCV Application", WINDOW_AUTOSIZE);
 	cv::imshow("First OpenCV Application", img);
 	cv::moveWindow("First OpenCV Application", 0, 45);
 	cv::waitKey(0);
-	cv::destroyAllWindows();
+	cv::destroyAllWindows();*/
 
 	Doubly<Student> list;
 	int action = 0;
@@ -60,6 +60,15 @@ int main()
 		case 4: {
 			cout << "Список усіх елементів:\n";
 			list.ShowList();
+			break;
+		}
+
+		case 5: {
+			list.ReadDataFile("mydata.txt");
+		}
+
+		case 6: {
+			list.SaveToFile("mydata.txt");
 		}
 		}
 
