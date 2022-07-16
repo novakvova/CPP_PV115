@@ -40,8 +40,6 @@ public:
 		}
 	}
 
-
-
 	void SaveToFile(const char* filePath)
 	{
 		ofstream out(filePath);
@@ -53,7 +51,6 @@ public:
 		}
 		out.close();
 	}
-
 
 	void ReadDataFile(const char* filePath)
 	{
@@ -69,6 +66,7 @@ public:
 		}
 		in.close();
 	}
+	
 	void ShowList() 
 	{
 		Node* temp = head; //Temp - вказує на перший елемент
@@ -90,6 +88,7 @@ public:
 		}
 		return false;
 	}
+	
 	void Change(T oldData, T newData)
 	{
 		Node* temp = head; //Temp - вказує на перший елемент
